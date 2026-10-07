@@ -1,0 +1,1 @@
+alert tcp any any -> any 502 (msg:"Modbus FC05 Write Single Coil"; flow:to_server,established; content:"|00 00|"; offset:2; depth:2; content:"|05|"; offset:7; depth:1; sid:1000001; rev:1;)
