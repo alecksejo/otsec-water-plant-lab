@@ -2,15 +2,15 @@
 
 Built this lab to get experience with OT networking and security. The lab uses OpenPLC to control a simulated water tank and pump, with Node-RED as the HMI.
 
-I used the lab to look at normal Modbus TCP traffic, test a write to the PLC, detect that traffic with Suricata, and restrict access to the PLC with iptables.
+Used the lab to look at normal Modbus TCP traffic, test a write to the PLC, detect that traffic with Suricata, and restrict access to the PLC with iptables.
 
 ![Water plant operating](gifs/hmi-operating.gif)
 
 ## Lab Setup
 
-The lab itself runs on Ubuntu in VMware. OpenPLC handles the PLC logic and Node-RED displays the tank level/pump status.
+The lab runs on Ubuntu in VMware. OpenPLC handles the PLC logic and Node-RED displays the tank level/pump status.
 
-The process itself is simple. The tank level rises and falls, and the PLC turns the pump on or off based on the level. Node-RED then reads those values from OpenPLC with Modbus TCP and displays them on the HMI, providng an accurate tank level.
+The process is straightforward. The tank level rises and falls, and the PLC turns the pump on or off based on the level. Node-RED then reads those values from OpenPLC with Modbus TCP and displays them on the HMI, providng an accurate tank level.
 
 Also used a Python script from my Windows host to send Modbus traffic to OpenPLC over TCP port 502. Wireshark and Suricata ran on the Ubuntu OT VM so I could monitor the traffic.
 
